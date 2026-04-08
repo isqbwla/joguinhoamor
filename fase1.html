@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Acesso inicial</title>
+
+<style>
+    body {
+        background: radial-gradient(circle at top, #1a1a1a, #000000);
+        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: #f5f5f5;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 105, 135, 0.4);
+        backdrop-filter: blur(12px);
+        border-radius: 20px;
+        padding: 40px;
+        max-width: 550px;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0 0 25px rgba(255, 105, 135, 0.25);
+    }
+
+    h1 {
+        font-weight: bold;
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #ff7aa2;
+        text-shadow: 0 0 10px rgba(255, 122, 162, 0.6);
+    }
+
+    p {
+        color: #d9d9d9;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .highlight {
+        color: #ff7aa2;
+        font-weight: bold;
+    }
+
+    .divider {
+        margin: 25px 0;
+        opacity: 0.2;
+    }
+
+    input {
+        width: 100%;
+        padding: 14px;
+        margin-top: 15px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,105,135,0.4);
+        background: #1a1a1a;
+        color: white;
+        text-align: center;
+        font-size: 15px;
+        outline: none;
+        box-shadow: 0 0 10px rgba(255,105,135,0.2);
+    }
+
+    input:focus {
+        box-shadow: 0 0 15px rgba(255,105,135,0.5);
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 14px;
+        width: 100%;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #ff7aa2, #ff4d6d);
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 15px;
+        transition: 0.3s;
+        box-shadow: 0 0 15px rgba(255,105,135,0.4);
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(255,105,135,0.7);
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .reward {
+        margin-top: 25px;
+    }
+
+    .reward p {
+        color: #ffffff;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>💖 Acesso inicial 💖</h1>
+
+<p><strong>Dr. Juan</strong>, você foi selecionado para acompanhar um conjunto de casos com um padrão incomum.</p>
+
+<p>Os registros indicam alterações fisiológicas e comportamentais associadas a um estímulo específico.</p>
+
+<p>Até o momento, os dados são inconclusivos.</p>
+
+<p>A partir de agora, novos fragmentos serão liberados diariamente até o dia <span class="highlight">18</span>.</p>
+
+<p>Cada resposta correta desbloqueia uma nova etapa… e uma recompensa.</p>
+
+<div class="divider">──────────</div>
+
+<p><strong>Nível 1</strong></p>
+
+<p>Neurohormônio produzido no hipotálamo, envolvido na modulação de vínculo social, memória emocional e comportamento de apego.</p>
+<p>Sua liberação aumenta em resposta a estímulos afetivos específicos, podendo influenciar diretamente a percepção de proximidade e conexão..</p>
+
+<input type="text" id="resposta" placeholder="Digite sua resposta">
+
+<button onclick="verificar()">Desbloquear 💕</button>
+
+<p id="mensagem"></p>
+
+<div id="recompensa" class="hidden reward">
+
+    <p><strong>Resposta correta.</strong></p>
+    <p>Você identificou o primeiro mecanismo envolvido.</p>
+
+    <div class="divider">──────────</div>
+
+    <p class="highlight">💋 Recompensa desbloqueada 💋</p>
+
+    <p>→ 1 beijo no dia 18</p>
+    <p>→ 1 presentinho surpresa 🎁</p>
+
+    <p style="margin-top:20px; font-style: italic; color:#ff7aa2;">
+        "te amoo amor bjuss..."
+    </p>
+
+</div>
+
+</div>
+
+<script>
+function verificar() {
+    var resposta = document.getElementById("resposta").value.toLowerCase().trim();
+
+    if (resposta === "ocitocina") {
+        document.getElementById("mensagem").innerText = "";
+        document.getElementById("recompensa").classList.remove("hidden");
+    } else {
+        document.getElementById("mensagem").innerText = "Resposta incorreta.";
+    }
+}
+</script>
+
+</body>
+</html>
