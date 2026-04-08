@@ -2,51 +2,114 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Sistema Neural</title>
+<title>NEUROLINK</title>
 
 <style>
 body {
-    background: #050507;
+    margin: 0;
+    background: radial-gradient(circle at top, #0a0a0f, #050507);
+    font-family: Arial, sans-serif;
     color: #eaeaea;
-    font-family: Arial;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
 }
 
+/* container */
 .container {
     text-align: center;
+    animation: fadeIn 1s ease;
 }
 
+/* título */
 h1 {
-    color: #ff7aa2;
+    color: #ff4fd8;
+    font-size: 32px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 12px rgba(255, 79, 216, 0.6);
+    animation: pulse 3s infinite;
 }
 
-.menu {
+.sub {
+    color: #9aa0a6;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* seção */
+.section {
     margin-top: 40px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #00ffaa;
+}
+
+/* cards */
+.menu {
+    margin-top: 20px;
 }
 
 .card {
     display: block;
-    border: 1px solid #ff7aa2;
-    padding: 20px;
-    border-radius: 10px;
-    width: 200px;
-    margin: 10px auto;
+    margin: 15px auto;
+    padding: 18px;
+    width: 260px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 79, 216, 0.4);
     text-decoration: none;
-    color: #ff7aa2;
+    color: #eaeaea;
     transition: 0.3s;
+    position: relative;
 }
 
 .card:hover {
-    background: #ff7aa2;
-    color: black;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 79, 216, 0.6);
+    border-color: #ff4fd8;
 }
 
+/* texto interno */
+.title {
+    color: #ff4fd8;
+    font-weight: bold;
+}
+
+.meta {
+    font-size: 12px;
+    color: #9aa0a6;
+    margin-top: 5px;
+}
+
+.action {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #00ffaa;
+}
+
+/* bloqueado */
 .locked {
     opacity: 0.3;
+    border-color: gray;
+}
+
+/* animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes pulse {
+    0% { text-shadow: 0 0 10px rgba(255,79,216,0.4);}
+    50% { text-shadow: 0 0 20px rgba(255,79,216,0.9);}
+    100% { text-shadow: 0 0 10px rgba(255,79,216,0.4);}
+}
+
+/* rodapé oculto vibes */
+.footer {
+    margin-top: 30px;
+    font-size: 11px;
+    color: #555;
 }
 </style>
 
@@ -56,19 +119,41 @@ h1 {
 
 <div class="container">
 
-<h1>Sistema Neural</h1>
-<p>selecione um caso</p>
+<h1>NEUROLINK v1.3</h1>
+
+<p class="sub">
+protocolo iniciado...<br>
+analisando respostas neurais a estímulos afetivos<br>
+status: <span style="color:#ff4fd8;">instável</span>
+</p>
+
+<div class="section">MÓDULOS DISPONÍVEIS</div>
 
 <div class="menu">
 
 <a href="fase1.html" class="card">
-Fase 01 — Acesso inicial
+    <div class="title">PROTOCOLO 01</div>
+    <div class="meta">resposta dopaminérgica</div>
+    <div class="action">>> iniciar análise</div>
 </a>
 
 <a href="fase2.html" class="card">
-Fase 02 — Continuação
+    <div class="title">PROTOCOLO 02</div>
+    <div class="meta">estabilização emocional</div>
+    <div class="action">>> continuar investigação</div>
 </a>
 
+<div class="card locked">
+    <div class="title">PROTOCOLO 03</div>
+    <div class="meta">vínculo afetivo profundo</div>
+    <div class="action">>> aguardando dados...</div>
+</div>
+
+</div>
+
+<div class="footer">
+registro identificado: Dr. Juan<br>
+níveis de conexão acima do esperado...
 </div>
 
 </div>
